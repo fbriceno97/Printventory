@@ -1,0 +1,6 @@
+services:
+  printventory:
+    volumes:
+      # Keep your normal persistent data and model-library mounts.
+      # Add this line so the container serves the patched browser bridge:
+      - ./source/custom/server/server-bridge.bambu.js:/app/server-bridge.js:ro
