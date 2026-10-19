@@ -1,0 +1,13 @@
+services:
+  printventory:
+    image: local/printventory-arm64:3.0.1-fcffc83
+    volumes:
+      # Existing persistent config/data mount:
+      # - /path/to/printventory/data:/root/.config/printventory
+      #
+      # Existing NAS model library mount:
+      # - /path/to/3D Printer Files:/mnt/models:ro
+      #
+      # Felix direct-NAS Bambu overrides:
+      - ./custom/v3.0.1/server/server-bridge.js:/app/server-bridge.js:ro
+      - ./custom/v3.0.1/server/slicer-protocol.js:/app/slicer-protocol.js:ro
